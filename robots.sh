@@ -3,9 +3,9 @@
 #Coded by: @laztname <- find me on telegram :3
 #Remove a credit doesn't make you look like coder --@ytyao xD
 
-robots() { 
+robots() {
 url=`curl -s $i/robots.txt --connect-timeout 3 -A "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"`
-printf "[i] Get robots.txt for $i\n"
+printf "\r[i] Get robots.txt for $i                    "
 printf "result for $i\n" >> result.txt
  if [[ $url = *"404"* ]] || [[ $url = *"301"* ]] || [[ $url == *"500"* ]] || [[ $url == *"html"* ]]; then
     printf "No robots found\n\n" >> result.txt
@@ -17,7 +17,8 @@ printf "result for $i\n" >> result.txt
 }
 
 if [[ -f $1 ]]; then
-	echo "+-------------------------------+"
+	clear
+    echo "+-------------------------------+"
     echo "|   Simple robots.txt Scanner   |"
     echo "| created with love by laztname |"
     echo "+-------------------------------+"
@@ -27,7 +28,8 @@ if [[ -f $1 ]]; then
     for i in `cat $1`;
       do robots;
     done
-    echo "[i] Done, check it at result.txt"
+    printf "\n[i] Done, check it at result.txt\n"
 else
 	printf "[!] Filemu mana mas?\n"
+    printf "[i] Usage $0 domain_list.txt\n"
 fi
