@@ -1,6 +1,8 @@
 # robots.sh
 mass robots.txt scanner
 
+![example](https://raw.githubusercontent.com/laztname/robots.sh/master/view.png)
+
 How to use ?
 ```git clone https://github.com/laztname/robots.sh
 cd robots.sh
